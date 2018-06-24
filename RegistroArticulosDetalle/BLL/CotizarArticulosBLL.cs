@@ -19,6 +19,11 @@ namespace RegistroArticulosDetalle.BLL
             {
                 if (contexto.Cotizar.Add(articulo) != null)
                 {
+                    foreach (var item in articulo.Detalle)
+                    {
+                        contexto.Articulos.Find(item.ArticuloId).CantCotizada += item.Cantidad;
+                    }
+
                     contexto.SaveChanges();
                     paso = true;
                 }
@@ -43,8 +48,24 @@ namespace RegistroArticulosDetalle.BLL
             Contexto contexto = new Contexto();
             try
             {
+                var cotizacionAnt = BLL.CotizarArticulosBLL.Buscar(articulo.CotizarId);
+
+                foreach (var item in cotizacionAnt.Detalle)
+                {
+                    contexto.Articulos.Find(item.ArticuloId).CantCotizada -= item.Cantidad;
+
+                    if(!articulo.Detalle.ToList().Exists(a => a.Id == item.Id))
+                    {
+                        contexto.Articulos.Find(item.ArticuloId).CantCotizada -= item.Cantidad;
+                        item.Articulo = null;
+                        contexto.Entry(item).State = EntityState.Deleted;
+                    }
+                }
+
                 foreach (var item in articulo.Detalle)
                 {
+                    contexto.Articulos.Find(item.ArticuloId).CantCotizada += item.Cantidad;
+
                     var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
                     contexto.Entry(item).State = estado;
                 }
@@ -69,6 +90,7 @@ namespace RegistroArticulosDetalle.BLL
 
             return paso;
         }
+        
 
         public static bool Eliminar(int id)
         {
@@ -78,6 +100,12 @@ namespace RegistroArticulosDetalle.BLL
             try
             {
                 CotizarArticulos articulo = contexto.Cotizar.Find(id);
+
+                foreach (var item in articulo.Detalle)
+                {
+                    var cotizar = contexto.Articulos.Find(item.ArticuloId).CantCotizada -= item.Cantidad;
+                }
+
                 contexto.Cotizar.Remove(articulo);
 
                 if (contexto.SaveChanges() > 0)

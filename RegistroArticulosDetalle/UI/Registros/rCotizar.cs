@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using RegistroArticulosDetalle.DAL;
+using RegistroArticulosDetalle.BLL;
 
 namespace RegistroArticulosDetalle.UI.Registros
 {
@@ -104,6 +106,111 @@ namespace RegistroArticulosDetalle.UI.Registros
                 importe: (int)Importe_numericUpDown.Value
                 ));
 
+            DetalleDataGridView.DataSource = null;
+            DetalleDataGridView.DataSource = Detalle;
+
+        }
+
+        private void LLenaCombobox()
+        {
+            Repositorio<Personas> personas = new Repositorio<Personas>(new Contexto());
+            Repositorio<Articulos> articulos = new Repositorio<Articulos>(new Contexto());
+
+            Persona_comboBox.DataSource = personas.GetList(p => true);
+            Persona_comboBox.ValueMember = "PersonaId";
+            Persona_comboBox.ValueMember = "Nombres";
+
+            Articulo_comboBox.DataSource = articulos.GetList(a => true);
+            Articulo_comboBox.ValueMember = "ArticuloId";
+            Articulo_comboBox.ValueMember = "Descripcion";
+
+        }
+
+        private CotizarArticulos LlenaClase()
+        {
+            CotizarArticulos cotizar = new CotizarArticulos();
+
+            cotizar.CotizarId = Convert.ToInt32(Id_numericUpDown.Value);
+            cotizar.Fecha = FechaCotizacion_dateTimePicker.Value.Date;
+            cotizar.Comentarios = Comentarios_textBox.Text;
+
+            foreach (DataGridViewRow item in DetalleDataGridView.Rows)
+            {
+                cotizar.AgregarDetalle(
+                    ToInt(item.Cells["Id"].Value),
+                    ToInt(item.Cells["CotizarId"].Value),
+                    ToInt(item.Cells["ArticuloId"].Value),
+                    ToInt(item.Cells["PersonaId"].Value),
+                    ToInt(item.Cells["Cantidad"].Value),
+                    ToInt(item.Cells["Precio"].Value),
+                    ToInt(item.Cells["Importe"].Value)      
+                    );
+            }
+            return cotizar;
+        }
+
+        private bool Validar()
+        {
+            bool CamposVacios = true;
+
+            if(Cantidad_numericUpDown.Value == 0)
+            {
+                ValidarErrorProvider.SetError(Cantidad_numericUpDown,"Cantidad de articulos vacia");
+                CamposVacios = false;
+            }
+
+            if(Precio_numericUpDown.Value == 0)
+            {
+                ValidarErrorProvider.SetError(Precio_numericUpDown, "Precio de articulo vacio");
+                CamposVacios = false;
+            }
+
+            if (Importe_numericUpDown.Value == 0)
+            {
+                ValidarErrorProvider.SetError(Importe_numericUpDown, "Importe de articulo vacio");
+                CamposVacios = false;
+            }
+
+            if (DetalleDataGridView.RowCount == 0)
+            {
+                ValidarErrorProvider.SetError(DetalleDataGridView, "Datos Vacios para mostrar");
+                CamposVacios = false;
+            }
+
+
+            return CamposVacios;
+        }
+
+        private int ToInt(object valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor.ToString(), out retorno);
+            return retorno;
+        }
+
+        private void LlenaCampos(CotizarArticulos cotizar)
+        {
+            Id_numericUpDown.Value = cotizar.CotizarId;
+            FechaCotizacion_dateTimePicker.Value = cotizar.Fecha;
+            Comentarios_textBox.Text = cotizar.Comentarios;
+
+            DetalleDataGridView.DataSource = cotizar.Detalle;
+
+            DetalleDataGridView.Columns["Id"].Visible = false;
+            DetalleDataGridView.Columns["CotizarId"].Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
+            {
+                List<CotizarArticulosDetalle> Detalle = (List<CotizarArticulosDetalle>)DetalleDataGridView.DataSource;
+
+                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
+                DetalleDataGridView.DataSource = null;
+                DetalleDataGridView.DataSource = Detalle;
+
+            }
         }
     }
 }

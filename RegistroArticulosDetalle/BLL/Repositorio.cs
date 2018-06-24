@@ -57,8 +57,7 @@ namespace RegistroArticulosDetalle.BLL
 
             return paso;
         }
-
-
+        
         public bool Eliminar(int id)
         {
             bool paso = false;
@@ -110,9 +109,7 @@ namespace RegistroArticulosDetalle.BLL
             }
             return list;
         }
-
-
-
+                
         public void Dispose()
         {
             _contexto.Dispose();

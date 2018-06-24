@@ -102,6 +102,7 @@
             // 
             // CantCotizada_numericUpDown
             // 
+            this.CantCotizada_numericUpDown.Enabled = false;
             this.CantCotizada_numericUpDown.Location = new System.Drawing.Point(151, 164);
             this.CantCotizada_numericUpDown.Maximum = new decimal(new int[] {
             300,

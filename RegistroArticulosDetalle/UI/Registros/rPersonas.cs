@@ -90,7 +90,10 @@ namespace RegistroArticulosDetalle.UI.Registros
                 }
 
                 if (paso)
+                {
+                    Nuevo_button.PerformClick();
                     MessageBox.Show("Guardado Correctamente", "Exito Al Guardar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                     MessageBox.Show("No Se Pudo Guardar", "Fallo Al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

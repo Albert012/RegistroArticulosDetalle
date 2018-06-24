@@ -52,10 +52,9 @@
   <ItemGroup>
     <Compile Include="BLL\ArticulosBLL.cs" />
     <Compile Include="BLL\CotizarArticulosBLL.cs" />
-    <Compile Include="DAL\ArticulosRepositorio.cs" />
-    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\PersonasBLL.cs" />
-    <Compile Include="DAL\Repositorio.cs" />
+    <Compile Include="BLL\Repositorio.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulos.cs" />
     <Compile Include="Entidades\CotizarArticulosDetalle.cs" />

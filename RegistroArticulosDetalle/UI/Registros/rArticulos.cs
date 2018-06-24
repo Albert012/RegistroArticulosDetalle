@@ -50,7 +50,7 @@ namespace RegistroArticulosDetalle.UI.Registros
                 paso = false;
             }
             //else
-            if (CantCotizada_numericUpDown.Value == 0)
+           /* if (CantCotizada_numericUpDown.Value == 0)
             {
                 Validar_errorProvider.SetError(CantCotizada_numericUpDown, "Debe Ingresar La Cantidad Cotizada Del Articulo");
                 paso = false;
@@ -62,7 +62,7 @@ namespace RegistroArticulosDetalle.UI.Registros
             {
                 Validar_errorProvider.SetError(CantCotizada_numericUpDown, "La Cantidad Cotizada No Debe Superar La Existencia Del Articulo");
                 paso = false;
-            }
+            }*/
 
             return paso;
         }
@@ -73,7 +73,7 @@ namespace RegistroArticulosDetalle.UI.Registros
             Articulos articulo = new Articulos();
 
             articulo.ArticuloId = Convert.ToInt32(ArticuloId_numericUpDown.Value);
-            articulo.FechaVencimiento = FechaVenc_dateTimePicker.Value;
+            articulo.FechaVencimiento = FechaVenc_dateTimePicker.Value.Date;
             articulo.Descripcion = Descripcion_textBox.Text;
             articulo.Precio = Convert.ToInt32(Precio_numericUpDown.Value);
             articulo.Existencia = Convert.ToInt32(Existencia_numericUpDown.Value);
@@ -105,8 +105,8 @@ namespace RegistroArticulosDetalle.UI.Registros
                 //Notifica Si ocurrio o no
                 if (paso)
                 {
-                    MessageBox.Show("Se Ha Guardado!!", "Congradulation!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Nuevo_button.PerformClick();
+                    MessageBox.Show("Se Ha Guardado!!", "Congradulation!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Validar_errorProvider.Clear();
                 }
 

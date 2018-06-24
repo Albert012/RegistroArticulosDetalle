@@ -8,6 +8,7 @@ namespace RegistroArticulosDetalle.Entidades
 {
     public class CotizarArticulos
     {
+        [Key]
         public int CotizarId { get; set; }
         public DateTime Fecha { get; set; }
 
