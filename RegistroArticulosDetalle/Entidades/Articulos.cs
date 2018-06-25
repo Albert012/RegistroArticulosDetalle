@@ -13,7 +13,7 @@ namespace RegistroArticulosDetalle.Entidades
         public int ArticuloId { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public string Descripcion { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
         public int Existencia { get; set; }
         public int CantCotizada { get; set; }
 

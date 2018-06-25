@@ -134,5 +134,6 @@ namespace RegistroArticulosDetalle.BLL
             return articulos;
         }
 
+        
     }
 }

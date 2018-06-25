@@ -57,5 +57,15 @@ namespace RegistroArticulosDetalle
             rcotizar.MdiParent = this.MdiParent;
             rcotizar.Show();
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            articulosToolStripMenuItem_Click(sender, e);
+        }
     }
 }

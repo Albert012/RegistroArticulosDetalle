@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Persona_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Remover_button = new System.Windows.Forms.Button();
             this.Comentarios_textBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Total_numericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -56,7 +57,6 @@
             this.Nuevo_button = new System.Windows.Forms.Button();
             this.Guardar_button = new System.Windows.Forms.Button();
             this.ValidarErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Remover_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Total_numericUpDown)).BeginInit();
@@ -73,7 +73,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(120, 21);
+            this.label9.Location = new System.Drawing.Point(196, 21);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(28, 19);
             this.label9.TabIndex = 26;
@@ -81,7 +81,7 @@
             // 
             // Id_numericUpDown
             // 
-            this.Id_numericUpDown.Location = new System.Drawing.Point(154, 23);
+            this.Id_numericUpDown.Location = new System.Drawing.Point(230, 23);
             this.Id_numericUpDown.Name = "Id_numericUpDown";
             this.Id_numericUpDown.Size = new System.Drawing.Size(88, 20);
             this.Id_numericUpDown.TabIndex = 27;
@@ -91,7 +91,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(372, 20);
+            this.label1.Location = new System.Drawing.Point(448, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 28;
@@ -100,7 +100,7 @@
             // FechaCotizacion_dateTimePicker
             // 
             this.FechaCotizacion_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaCotizacion_dateTimePicker.Location = new System.Drawing.Point(432, 19);
+            this.FechaCotizacion_dateTimePicker.Location = new System.Drawing.Point(508, 19);
             this.FechaCotizacion_dateTimePicker.Name = "FechaCotizacion_dateTimePicker";
             this.FechaCotizacion_dateTimePicker.Size = new System.Drawing.Size(89, 20);
             this.FechaCotizacion_dateTimePicker.TabIndex = 29;
@@ -110,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(80, 54);
+            this.label2.Location = new System.Drawing.Point(156, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 19);
             this.label2.TabIndex = 30;
@@ -118,8 +118,9 @@
             // 
             // Persona_comboBox
             // 
+            this.Persona_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Persona_comboBox.FormattingEnabled = true;
-            this.Persona_comboBox.Location = new System.Drawing.Point(154, 55);
+            this.Persona_comboBox.Location = new System.Drawing.Point(230, 55);
             this.Persona_comboBox.Name = "Persona_comboBox";
             this.Persona_comboBox.Size = new System.Drawing.Size(367, 21);
             this.Persona_comboBox.TabIndex = 0;
@@ -145,14 +146,24 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Location = new System.Drawing.Point(8, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(604, 430);
+            this.groupBox1.Size = new System.Drawing.Size(787, 430);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle Cotizacion";
             // 
+            // Remover_button
+            // 
+            this.Remover_button.Image = global::RegistroArticulosDetalle.Properties.Resources.remove;
+            this.Remover_button.Location = new System.Drawing.Point(611, 47);
+            this.Remover_button.Name = "Remover_button";
+            this.Remover_button.Size = new System.Drawing.Size(32, 24);
+            this.Remover_button.TabIndex = 44;
+            this.Remover_button.UseVisualStyleBackColor = true;
+            this.Remover_button.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Comentarios_textBox
             // 
-            this.Comentarios_textBox.Location = new System.Drawing.Point(7, 377);
+            this.Comentarios_textBox.Location = new System.Drawing.Point(116, 377);
             this.Comentarios_textBox.Multiline = true;
             this.Comentarios_textBox.Name = "Comentarios_textBox";
             this.Comentarios_textBox.Size = new System.Drawing.Size(584, 47);
@@ -163,7 +174,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(6, 355);
+            this.label8.Location = new System.Drawing.Point(115, 355);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 19);
             this.label8.TabIndex = 43;
@@ -171,7 +182,13 @@
             // 
             // Total_numericUpDown
             // 
-            this.Total_numericUpDown.Location = new System.Drawing.Point(409, 343);
+            this.Total_numericUpDown.Enabled = false;
+            this.Total_numericUpDown.Location = new System.Drawing.Point(518, 343);
+            this.Total_numericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.Total_numericUpDown.Name = "Total_numericUpDown";
             this.Total_numericUpDown.Size = new System.Drawing.Size(99, 22);
             this.Total_numericUpDown.TabIndex = 5;
@@ -181,7 +198,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(352, 342);
+            this.label7.Location = new System.Drawing.Point(460, 346);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 19);
             this.label7.TabIndex = 41;
@@ -190,7 +207,7 @@
             // Agregar_button
             // 
             this.Agregar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.new2;
-            this.Agregar_button.Location = new System.Drawing.Point(531, 16);
+            this.Agregar_button.Location = new System.Drawing.Point(612, 16);
             this.Agregar_button.Name = "Agregar_button";
             this.Agregar_button.Size = new System.Drawing.Size(31, 28);
             this.Agregar_button.TabIndex = 4;
@@ -200,29 +217,32 @@
             // DetalleDataGridView
             // 
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleDataGridView.GridColor = System.Drawing.SystemColors.ControlText;
             this.DetalleDataGridView.Location = new System.Drawing.Point(7, 76);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
-            this.DetalleDataGridView.Size = new System.Drawing.Size(587, 255);
+            this.DetalleDataGridView.Size = new System.Drawing.Size(774, 255);
             this.DetalleDataGridView.TabIndex = 39;
             // 
             // Importe_numericUpDown
             // 
-            this.Importe_numericUpDown.Location = new System.Drawing.Point(409, 41);
+            this.Importe_numericUpDown.Enabled = false;
+            this.Importe_numericUpDown.Location = new System.Drawing.Point(490, 41);
             this.Importe_numericUpDown.Maximum = new decimal(new int[] {
-            999999,
+            1000000,
             0,
             0,
             0});
             this.Importe_numericUpDown.Name = "Importe_numericUpDown";
             this.Importe_numericUpDown.Size = new System.Drawing.Size(99, 22);
             this.Importe_numericUpDown.TabIndex = 3;
+            this.Importe_numericUpDown.ValueChanged += new System.EventHandler(this.Importe_numericUpDown_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(405, 18);
+            this.label6.Location = new System.Drawing.Point(486, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 19);
             this.label6.TabIndex = 37;
@@ -230,22 +250,23 @@
             // 
             // Precio_numericUpDown
             // 
-            this.Precio_numericUpDown.Location = new System.Drawing.Point(292, 40);
+            this.Precio_numericUpDown.Location = new System.Drawing.Point(373, 40);
             this.Precio_numericUpDown.Maximum = new decimal(new int[] {
-            999999,
+            100000,
             0,
             0,
             0});
             this.Precio_numericUpDown.Name = "Precio_numericUpDown";
             this.Precio_numericUpDown.Size = new System.Drawing.Size(99, 22);
             this.Precio_numericUpDown.TabIndex = 2;
+            this.Precio_numericUpDown.ValueChanged += new System.EventHandler(this.Precio_numericUpDown_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(288, 18);
+            this.label5.Location = new System.Drawing.Point(369, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 19);
             this.label5.TabIndex = 35;
@@ -253,17 +274,18 @@
             // 
             // Cantidad_numericUpDown
             // 
-            this.Cantidad_numericUpDown.Location = new System.Drawing.Point(199, 41);
+            this.Cantidad_numericUpDown.Location = new System.Drawing.Point(280, 41);
             this.Cantidad_numericUpDown.Name = "Cantidad_numericUpDown";
             this.Cantidad_numericUpDown.Size = new System.Drawing.Size(87, 22);
             this.Cantidad_numericUpDown.TabIndex = 1;
+            this.Cantidad_numericUpDown.ValueChanged += new System.EventHandler(this.Cantidad_numericUpDown_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(195, 18);
+            this.label4.Location = new System.Drawing.Point(276, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 19);
             this.label4.TabIndex = 33;
@@ -271,18 +293,20 @@
             // 
             // Articulo_comboBox
             // 
+            this.Articulo_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Articulo_comboBox.FormattingEnabled = true;
-            this.Articulo_comboBox.Location = new System.Drawing.Point(7, 40);
+            this.Articulo_comboBox.Location = new System.Drawing.Point(88, 40);
             this.Articulo_comboBox.Name = "Articulo_comboBox";
             this.Articulo_comboBox.Size = new System.Drawing.Size(159, 23);
             this.Articulo_comboBox.TabIndex = 0;
+            this.Articulo_comboBox.SelectedIndexChanged += new System.EventHandler(this.Articulo_comboBox_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(6, 18);
+            this.label3.Location = new System.Drawing.Point(87, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 19);
             this.label3.TabIndex = 31;
@@ -291,7 +315,7 @@
             // Buscar_button
             // 
             this.Buscar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.find;
-            this.Buscar_button.Location = new System.Drawing.Point(248, 14);
+            this.Buscar_button.Location = new System.Drawing.Point(324, 14);
             this.Buscar_button.Name = "Buscar_button";
             this.Buscar_button.Size = new System.Drawing.Size(34, 35);
             this.Buscar_button.TabIndex = 40;
@@ -305,7 +329,7 @@
             this.groupBox2.Controls.Add(this.Guardar_button);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(186, 528);
+            this.groupBox2.Location = new System.Drawing.Point(317, 528);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(199, 81);
             this.groupBox2.TabIndex = 41;
@@ -346,22 +370,12 @@
             // 
             this.ValidarErrorProvider.ContainerControl = this;
             // 
-            // Remover_button
-            // 
-            this.Remover_button.Image = global::RegistroArticulosDetalle.Properties.Resources.remove;
-            this.Remover_button.Location = new System.Drawing.Point(530, 47);
-            this.Remover_button.Name = "Remover_button";
-            this.Remover_button.Size = new System.Drawing.Size(32, 24);
-            this.Remover_button.TabIndex = 44;
-            this.Remover_button.UseVisualStyleBackColor = true;
-            this.Remover_button.Click += new System.EventHandler(this.button1_Click);
-            // 
             // rCotizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(620, 621);
+            this.ClientSize = new System.Drawing.Size(807, 621);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Buscar_button);
             this.Controls.Add(this.groupBox1);
@@ -375,6 +389,7 @@
             this.Name = "rCotizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Cotizacion";
+            this.Load += new System.EventHandler(this.rCotizar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -14,7 +14,7 @@ namespace RegistroArticulosDetalle.Entidades
 
         [StringLength(100)]
         public string Comentarios { get; set; }
-        public int Monto { get; set; }
+        public decimal Total { get; set; }
 
         public virtual ICollection<CotizarArticulosDetalle> Detalle { get; set; }
 

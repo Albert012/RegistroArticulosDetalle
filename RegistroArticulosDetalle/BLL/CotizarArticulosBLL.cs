@@ -91,7 +91,6 @@ namespace RegistroArticulosDetalle.BLL
             return paso;
         }
         
-
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -173,8 +172,15 @@ namespace RegistroArticulosDetalle.BLL
             return articulos;
         }
 
+        public static Decimal CalcularImporte(Decimal cantidad, Decimal precio)
+        {
+            return cantidad * precio;
+        }
 
+        public static Decimal CalcularTotal(Decimal importe)
+        {
 
-
+            return importe;
+        }
     }
 }

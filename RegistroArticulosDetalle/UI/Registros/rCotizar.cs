@@ -77,7 +77,6 @@ namespace RegistroArticulosDetalle.UI.Registros
             int id = Convert.ToInt32(Id_numericUpDown.Value);
             CotizarArticulos articulo = BLL.CotizarArticulosBLL.Buscar(id);
 
-
             if (articulo != null)
             {
                 LlenaCampos(articulo);
@@ -118,11 +117,11 @@ namespace RegistroArticulosDetalle.UI.Registros
 
             Persona_comboBox.DataSource = personas.GetList(p => true);
             Persona_comboBox.ValueMember = "PersonaId";
-            Persona_comboBox.ValueMember = "Nombres";
+            Persona_comboBox.DisplayMember = "Nombres";
 
             Articulo_comboBox.DataSource = articulos.GetList(a => true);
             Articulo_comboBox.ValueMember = "ArticuloId";
-            Articulo_comboBox.ValueMember = "Descripcion";
+            Articulo_comboBox.DisplayMember = "Descripcion";
 
         }
 
@@ -132,6 +131,7 @@ namespace RegistroArticulosDetalle.UI.Registros
 
             cotizar.CotizarId = Convert.ToInt32(Id_numericUpDown.Value);
             cotizar.Fecha = FechaCotizacion_dateTimePicker.Value.Date;
+            cotizar.Total = Total_numericUpDown.Value;
             cotizar.Comentarios = Comentarios_textBox.Text;
 
             foreach (DataGridViewRow item in DetalleDataGridView.Rows)
@@ -143,9 +143,11 @@ namespace RegistroArticulosDetalle.UI.Registros
                     ToInt(item.Cells["PersonaId"].Value),
                     ToInt(item.Cells["Cantidad"].Value),
                     ToInt(item.Cells["Precio"].Value),
-                    ToInt(item.Cells["Importe"].Value)      
+                    ToInt(item.Cells["Importe"].Value)
                     );
             }
+
+
             return cotizar;
         }
 
@@ -192,6 +194,7 @@ namespace RegistroArticulosDetalle.UI.Registros
         {
             Id_numericUpDown.Value = cotizar.CotizarId;
             FechaCotizacion_dateTimePicker.Value = cotizar.Fecha;
+            Total_numericUpDown.Value = cotizar.Total;
             Comentarios_textBox.Text = cotizar.Comentarios;
 
             DetalleDataGridView.DataSource = cotizar.Detalle;
@@ -211,6 +214,39 @@ namespace RegistroArticulosDetalle.UI.Registros
                 DetalleDataGridView.DataSource = Detalle;
 
             }
+        }
+
+        private void rCotizar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Importe_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if(Importe_numericUpDown.Value != 0)
+            {
+                Total_numericUpDown.Value = BLL.CotizarArticulosBLL.CalcularTotal(Importe_numericUpDown.Value);
+            }
+        }
+
+        private void Precio_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if(Cantidad_numericUpDown.Value != 0 && Precio_numericUpDown.Value != 0)
+            {
+                Importe_numericUpDown.Value = BLL.CotizarArticulosBLL.CalcularImporte(Cantidad_numericUpDown.Value, Precio_numericUpDown.Value);
+            }
+        }
+
+        private void Cantidad_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (Cantidad_numericUpDown.Value != 0 && Precio_numericUpDown.Value != 0)
+            {
+                Importe_numericUpDown.Value = BLL.CotizarArticulosBLL.CalcularImporte(Cantidad_numericUpDown.Value, Precio_numericUpDown.Value);
+            }
+        }
+                
+        private void Articulo_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }
