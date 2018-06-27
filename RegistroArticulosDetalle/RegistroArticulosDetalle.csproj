@@ -152,6 +152,7 @@
     <Content Include="Resources\Printer.png" />
     <Content Include="Resources\remove.png" />
     <Content Include="Resources\Save.png" />
+    <None Include="Resources\Shopping-Cart-Add-256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,12 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Persona_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Remover_button = new System.Windows.Forms.Button();
             this.Comentarios_textBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Total_numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.Agregar_button = new System.Windows.Forms.Button();
             this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.Importe_numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,12 +49,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Articulo_comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Buscar_button = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ValidarErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminar_button = new System.Windows.Forms.Button();
             this.Nuevo_button = new System.Windows.Forms.Button();
             this.Guardar_button = new System.Windows.Forms.Button();
-            this.ValidarErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Buscar_button = new System.Windows.Forms.Button();
+            this.Remover_button = new System.Windows.Forms.Button();
+            this.Agregar_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Total_numericUpDown)).BeginInit();
@@ -151,22 +151,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle Cotizacion";
             // 
-            // Remover_button
-            // 
-            this.Remover_button.Image = global::RegistroArticulosDetalle.Properties.Resources.remove;
-            this.Remover_button.Location = new System.Drawing.Point(611, 47);
-            this.Remover_button.Name = "Remover_button";
-            this.Remover_button.Size = new System.Drawing.Size(32, 24);
-            this.Remover_button.TabIndex = 44;
-            this.Remover_button.UseVisualStyleBackColor = true;
-            this.Remover_button.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Comentarios_textBox
             // 
-            this.Comentarios_textBox.Location = new System.Drawing.Point(116, 377);
+            this.Comentarios_textBox.Location = new System.Drawing.Point(7, 379);
             this.Comentarios_textBox.Multiline = true;
             this.Comentarios_textBox.Name = "Comentarios_textBox";
-            this.Comentarios_textBox.Size = new System.Drawing.Size(584, 47);
+            this.Comentarios_textBox.Size = new System.Drawing.Size(636, 47);
             this.Comentarios_textBox.TabIndex = 6;
             // 
             // label8
@@ -174,7 +164,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(115, 355);
+            this.label8.Location = new System.Drawing.Point(6, 357);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 19);
             this.label8.TabIndex = 43;
@@ -190,8 +180,9 @@
             0,
             0});
             this.Total_numericUpDown.Name = "Total_numericUpDown";
-            this.Total_numericUpDown.Size = new System.Drawing.Size(99, 22);
+            this.Total_numericUpDown.Size = new System.Drawing.Size(125, 22);
             this.Total_numericUpDown.TabIndex = 5;
+            this.Total_numericUpDown.ValueChanged += new System.EventHandler(this.Total_numericUpDown_ValueChanged);
             // 
             // label7
             // 
@@ -204,16 +195,6 @@
             this.label7.TabIndex = 41;
             this.label7.Text = "Total:";
             // 
-            // Agregar_button
-            // 
-            this.Agregar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.new2;
-            this.Agregar_button.Location = new System.Drawing.Point(612, 16);
-            this.Agregar_button.Name = "Agregar_button";
-            this.Agregar_button.Size = new System.Drawing.Size(31, 28);
-            this.Agregar_button.TabIndex = 4;
-            this.Agregar_button.UseVisualStyleBackColor = true;
-            this.Agregar_button.Click += new System.EventHandler(this.Agregar_button_Click);
-            // 
             // DetalleDataGridView
             // 
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -222,6 +203,7 @@
             this.DetalleDataGridView.Name = "DetalleDataGridView";
             this.DetalleDataGridView.Size = new System.Drawing.Size(774, 255);
             this.DetalleDataGridView.TabIndex = 39;
+            this.DetalleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellContentClick);
             // 
             // Importe_numericUpDown
             // 
@@ -250,6 +232,7 @@
             // 
             // Precio_numericUpDown
             // 
+            this.Precio_numericUpDown.Enabled = false;
             this.Precio_numericUpDown.Location = new System.Drawing.Point(373, 40);
             this.Precio_numericUpDown.Maximum = new decimal(new int[] {
             100000,
@@ -297,7 +280,7 @@
             this.Articulo_comboBox.FormattingEnabled = true;
             this.Articulo_comboBox.Location = new System.Drawing.Point(88, 40);
             this.Articulo_comboBox.Name = "Articulo_comboBox";
-            this.Articulo_comboBox.Size = new System.Drawing.Size(159, 23);
+            this.Articulo_comboBox.Size = new System.Drawing.Size(186, 23);
             this.Articulo_comboBox.TabIndex = 0;
             this.Articulo_comboBox.SelectedIndexChanged += new System.EventHandler(this.Articulo_comboBox_SelectedIndexChanged);
             // 
@@ -312,16 +295,6 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "Articulo:";
             // 
-            // Buscar_button
-            // 
-            this.Buscar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.find;
-            this.Buscar_button.Location = new System.Drawing.Point(324, 14);
-            this.Buscar_button.Name = "Buscar_button";
-            this.Buscar_button.Size = new System.Drawing.Size(34, 35);
-            this.Buscar_button.TabIndex = 40;
-            this.Buscar_button.UseVisualStyleBackColor = true;
-            this.Buscar_button.Click += new System.EventHandler(this.Buscar_button_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Eliminar_button);
@@ -335,6 +308,10 @@
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
+            // 
+            // ValidarErrorProvider
+            // 
+            this.ValidarErrorProvider.ContainerControl = this;
             // 
             // Eliminar_button
             // 
@@ -366,9 +343,35 @@
             this.Guardar_button.UseVisualStyleBackColor = true;
             this.Guardar_button.Click += new System.EventHandler(this.Guardar_button_Click);
             // 
-            // ValidarErrorProvider
+            // Buscar_button
             // 
-            this.ValidarErrorProvider.ContainerControl = this;
+            this.Buscar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.find;
+            this.Buscar_button.Location = new System.Drawing.Point(324, 14);
+            this.Buscar_button.Name = "Buscar_button";
+            this.Buscar_button.Size = new System.Drawing.Size(34, 35);
+            this.Buscar_button.TabIndex = 40;
+            this.Buscar_button.UseVisualStyleBackColor = true;
+            this.Buscar_button.Click += new System.EventHandler(this.Buscar_button_Click);
+            // 
+            // Remover_button
+            // 
+            this.Remover_button.Image = global::RegistroArticulosDetalle.Properties.Resources.remove;
+            this.Remover_button.Location = new System.Drawing.Point(611, 47);
+            this.Remover_button.Name = "Remover_button";
+            this.Remover_button.Size = new System.Drawing.Size(32, 24);
+            this.Remover_button.TabIndex = 44;
+            this.Remover_button.UseVisualStyleBackColor = true;
+            this.Remover_button.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Agregar_button
+            // 
+            this.Agregar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.new2;
+            this.Agregar_button.Location = new System.Drawing.Point(612, 16);
+            this.Agregar_button.Name = "Agregar_button";
+            this.Agregar_button.Size = new System.Drawing.Size(31, 28);
+            this.Agregar_button.TabIndex = 4;
+            this.Agregar_button.UseVisualStyleBackColor = true;
+            this.Agregar_button.Click += new System.EventHandler(this.Agregar_button_Click);
             // 
             // rCotizar
             // 

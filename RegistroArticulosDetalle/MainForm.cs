@@ -67,5 +67,40 @@ namespace RegistroArticulosDetalle
         {
             articulosToolStripMenuItem_Click(sender, e);
         }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click_2(object sender, EventArgs e)
+        {
+            articulosToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripLabel1_Click_1(object sender, EventArgs e)
+        {
+            articulosToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            personasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            personasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            cotizarToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            cotizarToolStripMenuItem_Click(sender, e);
+        }
     }
 }

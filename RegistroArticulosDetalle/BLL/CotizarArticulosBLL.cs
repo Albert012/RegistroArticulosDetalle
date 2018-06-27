@@ -171,16 +171,16 @@ namespace RegistroArticulosDetalle.BLL
             }
             return articulos;
         }
-
+       
         public static Decimal CalcularImporte(Decimal cantidad, Decimal precio)
         {
             return cantidad * precio;
         }
 
         public static Decimal CalcularTotal(Decimal importe)
-        {
-
+        {            
             return importe;
         }
+
     }
 }

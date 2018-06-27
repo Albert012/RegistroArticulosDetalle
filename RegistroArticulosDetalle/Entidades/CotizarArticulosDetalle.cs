@@ -32,6 +32,8 @@ namespace RegistroArticulosDetalle.Entidades
             
         }
 
+        
+
         public CotizarArticulosDetalle(int id, int cotizarId, int articuloId, int personaId, int cantidadCotizada, int precio, int importe)
         {
             Id = id;
