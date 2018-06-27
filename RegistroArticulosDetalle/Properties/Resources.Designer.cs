@@ -153,6 +153,16 @@ namespace RegistroArticulosDetalle.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Shopping_Cart_A4dd_256 {
+            get {
+                object obj = ResourceManager.GetObject("Shopping-Cart-A4dd-256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Shopping_Cart_Add_256 {
             get {
                 object obj = ResourceManager.GetObject("Shopping-Cart-Add-256", resourceCulture);

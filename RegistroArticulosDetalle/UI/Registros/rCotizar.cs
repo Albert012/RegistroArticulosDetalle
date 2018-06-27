@@ -106,9 +106,11 @@ namespace RegistroArticulosDetalle.UI.Registros
                 importe: (int)Importe_numericUpDown.Value
                 ));
 
+            
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = Detalle;
-            Total();
+            AddTotal();
+            Cantidad_numericUpDown.Value = 0;
         }
                 
         private void button1_Click(object sender, EventArgs e)
@@ -118,9 +120,10 @@ namespace RegistroArticulosDetalle.UI.Registros
                 List<CotizarArticulosDetalle> Detalle = (List<CotizarArticulosDetalle>)DetalleDataGridView.DataSource;
 
                 Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
+                RemoveTotal();
                 DetalleDataGridView.DataSource = null;
                 DetalleDataGridView.DataSource = Detalle;
-
+                
             }
         }
 
@@ -181,12 +184,31 @@ namespace RegistroArticulosDetalle.UI.Registros
         }
 
         //calcular el total de la cotizacion
-        private void Total()
+        private void AddTotal()
         {
             if (Importe_numericUpDown.Value != 0)
             {
                 Total_numericUpDown.Value += BLL.CotizarArticulosBLL.CalcularTotal(Importe_numericUpDown.Value);
             }
+        }
+
+        private void RemoveTotal()
+        {
+            List<CotizarArticulosDetalle> Detalle = (List<CotizarArticulosDetalle>)DetalleDataGridView.DataSource;
+
+            decimal total = 0;
+
+
+            foreach (var item in Detalle)
+            {
+                total -= item.Importe;
+            }
+            total *= (-1);
+            //Importe_numericUpDown.Value = 
+
+            Total_numericUpDown.Value = BLL.CotizarArticulosBLL.CalcularTotal(total);
+
+            
         }
 
         //llenar el combobox con los datos de las entidades
