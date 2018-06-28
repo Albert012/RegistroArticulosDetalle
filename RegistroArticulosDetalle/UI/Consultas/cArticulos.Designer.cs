@@ -224,7 +224,10 @@
             this.Controls.Add(this.Rango_groupBox);
             this.Controls.Add(this.Consulta_dataGridView);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "cArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cArticulos";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

@@ -36,10 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Persona_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Remover_button = new System.Windows.Forms.Button();
             this.Comentarios_textBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Total_numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
+            this.Agregar_button = new System.Windows.Forms.Button();
             this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.Importe_numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,13 +52,12 @@
             this.Articulo_comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ValidarErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminar_button = new System.Windows.Forms.Button();
             this.Nuevo_button = new System.Windows.Forms.Button();
             this.Guardar_button = new System.Windows.Forms.Button();
+            this.ValidarErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Buscar_button = new System.Windows.Forms.Button();
-            this.Remover_button = new System.Windows.Forms.Button();
-            this.Agregar_button = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.Id_numericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Total_numericUpDown)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Cantidad_numericUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ValidarErrorProvider)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -127,13 +129,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.Remover_button);
             this.groupBox1.Controls.Add(this.Comentarios_textBox);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.Total_numericUpDown);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.Agregar_button);
-            this.groupBox1.Controls.Add(this.DetalleDataGridView);
             this.groupBox1.Controls.Add(this.Importe_numericUpDown);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.Precio_numericUpDown);
@@ -144,16 +146,26 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(8, 92);
+            this.groupBox1.Location = new System.Drawing.Point(8, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(787, 430);
+            this.groupBox1.Size = new System.Drawing.Size(787, 449);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle Cotizacion";
             // 
+            // Remover_button
+            // 
+            this.Remover_button.Image = global::RegistroArticulosDetalle.Properties.Resources.remove;
+            this.Remover_button.Location = new System.Drawing.Point(611, 47);
+            this.Remover_button.Name = "Remover_button";
+            this.Remover_button.Size = new System.Drawing.Size(32, 24);
+            this.Remover_button.TabIndex = 44;
+            this.Remover_button.UseVisualStyleBackColor = true;
+            this.Remover_button.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Comentarios_textBox
             // 
-            this.Comentarios_textBox.Location = new System.Drawing.Point(7, 379);
+            this.Comentarios_textBox.Location = new System.Drawing.Point(7, 396);
             this.Comentarios_textBox.Multiline = true;
             this.Comentarios_textBox.Name = "Comentarios_textBox";
             this.Comentarios_textBox.Size = new System.Drawing.Size(636, 47);
@@ -164,7 +176,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(6, 357);
+            this.label8.Location = new System.Drawing.Point(6, 374);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 19);
             this.label8.TabIndex = 43;
@@ -173,7 +185,7 @@
             // Total_numericUpDown
             // 
             this.Total_numericUpDown.Enabled = false;
-            this.Total_numericUpDown.Location = new System.Drawing.Point(518, 343);
+            this.Total_numericUpDown.Location = new System.Drawing.Point(518, 360);
             this.Total_numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -189,19 +201,31 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(460, 346);
+            this.label7.Location = new System.Drawing.Point(460, 363);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 19);
             this.label7.TabIndex = 41;
             this.label7.Text = "Total:";
             // 
+            // Agregar_button
+            // 
+            this.Agregar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.new2;
+            this.Agregar_button.Location = new System.Drawing.Point(612, 16);
+            this.Agregar_button.Name = "Agregar_button";
+            this.Agregar_button.Size = new System.Drawing.Size(31, 28);
+            this.Agregar_button.TabIndex = 4;
+            this.Agregar_button.UseVisualStyleBackColor = true;
+            this.Agregar_button.Click += new System.EventHandler(this.Agregar_button_Click);
+            // 
             // DetalleDataGridView
             // 
+            this.DetalleDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DetalleDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DetalleDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalleDataGridView.GridColor = System.Drawing.SystemColors.ControlText;
-            this.DetalleDataGridView.Location = new System.Drawing.Point(7, 76);
+            this.DetalleDataGridView.Location = new System.Drawing.Point(9, 13);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
-            this.DetalleDataGridView.Size = new System.Drawing.Size(774, 255);
+            this.DetalleDataGridView.Size = new System.Drawing.Size(763, 264);
             this.DetalleDataGridView.TabIndex = 39;
             this.DetalleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellContentClick);
             // 
@@ -309,10 +333,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
-            // ValidarErrorProvider
-            // 
-            this.ValidarErrorProvider.ContainerControl = this;
-            // 
             // Eliminar_button
             // 
             this.Eliminar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.Delete;
@@ -343,6 +363,10 @@
             this.Guardar_button.UseVisualStyleBackColor = true;
             this.Guardar_button.Click += new System.EventHandler(this.Guardar_button_Click);
             // 
+            // ValidarErrorProvider
+            // 
+            this.ValidarErrorProvider.ContainerControl = this;
+            // 
             // Buscar_button
             // 
             this.Buscar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.find;
@@ -353,25 +377,14 @@
             this.Buscar_button.UseVisualStyleBackColor = true;
             this.Buscar_button.Click += new System.EventHandler(this.Buscar_button_Click);
             // 
-            // Remover_button
+            // groupBox3
             // 
-            this.Remover_button.Image = global::RegistroArticulosDetalle.Properties.Resources.remove;
-            this.Remover_button.Location = new System.Drawing.Point(611, 47);
-            this.Remover_button.Name = "Remover_button";
-            this.Remover_button.Size = new System.Drawing.Size(32, 24);
-            this.Remover_button.TabIndex = 44;
-            this.Remover_button.UseVisualStyleBackColor = true;
-            this.Remover_button.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Agregar_button
-            // 
-            this.Agregar_button.Image = global::RegistroArticulosDetalle.Properties.Resources.new2;
-            this.Agregar_button.Location = new System.Drawing.Point(612, 16);
-            this.Agregar_button.Name = "Agregar_button";
-            this.Agregar_button.Size = new System.Drawing.Size(31, 28);
-            this.Agregar_button.TabIndex = 4;
-            this.Agregar_button.UseVisualStyleBackColor = true;
-            this.Agregar_button.Click += new System.EventHandler(this.Agregar_button_Click);
+            this.groupBox3.Controls.Add(this.DetalleDataGridView);
+            this.groupBox3.Location = new System.Drawing.Point(4, 73);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(779, 282);
+            this.groupBox3.TabIndex = 45;
+            this.groupBox3.TabStop = false;
             // 
             // rCotizar
             // 
@@ -403,6 +416,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Cantidad_numericUpDown)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ValidarErrorProvider)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,5 +452,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ErrorProvider ValidarErrorProvider;
         private System.Windows.Forms.Button Remover_button;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

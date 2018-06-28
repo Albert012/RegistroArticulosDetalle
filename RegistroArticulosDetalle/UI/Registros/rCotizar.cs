@@ -195,9 +195,7 @@ namespace RegistroArticulosDetalle.UI.Registros
         private void RemoveTotal()
         {
             List<CotizarArticulosDetalle> Detalle = (List<CotizarArticulosDetalle>)DetalleDataGridView.DataSource;
-
             decimal total = 0;
-
 
             foreach (var item in Detalle)
             {
@@ -205,9 +203,7 @@ namespace RegistroArticulosDetalle.UI.Registros
             }
             total *= (-1);
             //Importe_numericUpDown.Value = 
-
             Total_numericUpDown.Value = BLL.CotizarArticulosBLL.CalcularTotal(total);
-
             
         }
 
@@ -258,11 +254,11 @@ namespace RegistroArticulosDetalle.UI.Registros
         {
             bool CamposVacios = false;
 
-            if (Cantidad_numericUpDown.Value == 0)
-            {
-                ValidarErrorProvider.SetError(Cantidad_numericUpDown, "Cantidad de articulos vacia");
-                CamposVacios = true;
-            }
+            //if (Cantidad_numericUpDown.Value == 0)
+            //{
+            //    ValidarErrorProvider.SetError(Cantidad_numericUpDown, "Cantidad de articulos vacia");
+            //    CamposVacios = true;
+            //}
 
             if (DetalleDataGridView.RowCount == 0)
             {

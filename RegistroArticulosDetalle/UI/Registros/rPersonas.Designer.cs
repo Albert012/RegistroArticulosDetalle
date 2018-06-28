@@ -58,6 +58,72 @@
             ((System.ComponentModel.ISupportInitialize)(this.ValidarErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            telefonoLabel.ForeColor = System.Drawing.SystemColors.Control;
+            telefonoLabel.Location = new System.Drawing.Point(218, 162);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(72, 19);
+            telefonoLabel.TabIndex = 24;
+            telefonoLabel.Text = "Telefono:";
+            // 
+            // cedulaLabel
+            // 
+            cedulaLabel.AutoSize = true;
+            cedulaLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cedulaLabel.ForeColor = System.Drawing.SystemColors.Control;
+            cedulaLabel.Location = new System.Drawing.Point(30, 162);
+            cedulaLabel.Name = "cedulaLabel";
+            cedulaLabel.Size = new System.Drawing.Size(61, 19);
+            cedulaLabel.TabIndex = 22;
+            cedulaLabel.Text = "Cedula:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            direccionLabel.ForeColor = System.Drawing.SystemColors.Control;
+            direccionLabel.Location = new System.Drawing.Point(18, 125);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(78, 19);
+            direccionLabel.TabIndex = 20;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // nombresLabel
+            // 
+            nombresLabel.AutoSize = true;
+            nombresLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombresLabel.ForeColor = System.Drawing.SystemColors.Control;
+            nombresLabel.Location = new System.Drawing.Point(21, 89);
+            nombresLabel.Name = "nombresLabel";
+            nombresLabel.Size = new System.Drawing.Size(75, 19);
+            nombresLabel.TabIndex = 18;
+            nombresLabel.Text = "Nombres:";
+            // 
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fechaLabel.ForeColor = System.Drawing.SystemColors.Control;
+            fechaLabel.Location = new System.Drawing.Point(33, 56);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(54, 19);
+            fechaLabel.TabIndex = 15;
+            fechaLabel.Text = "Fecha:";
+            // 
+            // personaIdLabel
+            // 
+            personaIdLabel.AutoSize = true;
+            personaIdLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            personaIdLabel.ForeColor = System.Drawing.SystemColors.Control;
+            personaIdLabel.Location = new System.Drawing.Point(12, 24);
+            personaIdLabel.Name = "personaIdLabel";
+            personaIdLabel.Size = new System.Drawing.Size(86, 19);
+            personaIdLabel.TabIndex = 14;
+            personaIdLabel.Text = "Persona Id:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button2);
@@ -112,17 +178,6 @@
             this.Buscar_button.UseVisualStyleBackColor = true;
             this.Buscar_button.Click += new System.EventHandler(this.Buscar_button_Click);
             // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            telefonoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            telefonoLabel.Location = new System.Drawing.Point(218, 162);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(72, 19);
-            telefonoLabel.TabIndex = 24;
-            telefonoLabel.Text = "Telefono:";
-            // 
             // telefonoMaskedTextBox
             // 
             this.telefonoMaskedTextBox.Location = new System.Drawing.Point(293, 159);
@@ -130,17 +185,6 @@
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.telefonoMaskedTextBox.TabIndex = 25;
-            // 
-            // cedulaLabel
-            // 
-            cedulaLabel.AutoSize = true;
-            cedulaLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cedulaLabel.ForeColor = System.Drawing.SystemColors.Control;
-            cedulaLabel.Location = new System.Drawing.Point(30, 162);
-            cedulaLabel.Name = "cedulaLabel";
-            cedulaLabel.Size = new System.Drawing.Size(61, 19);
-            cedulaLabel.TabIndex = 22;
-            cedulaLabel.Text = "Cedula:";
             // 
             // cedulaMaskedTextBox
             // 
@@ -150,34 +194,12 @@
             this.cedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.cedulaMaskedTextBox.TabIndex = 23;
             // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            direccionLabel.ForeColor = System.Drawing.SystemColors.Control;
-            direccionLabel.Location = new System.Drawing.Point(18, 125);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(78, 19);
-            direccionLabel.TabIndex = 20;
-            direccionLabel.Text = "Direccion:";
-            // 
             // direccionTextBox
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(106, 122);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(287, 20);
             this.direccionTextBox.TabIndex = 21;
-            // 
-            // nombresLabel
-            // 
-            nombresLabel.AutoSize = true;
-            nombresLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombresLabel.ForeColor = System.Drawing.SystemColors.Control;
-            nombresLabel.Location = new System.Drawing.Point(21, 89);
-            nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(75, 19);
-            nombresLabel.TabIndex = 18;
-            nombresLabel.Text = "Nombres:";
             // 
             // nombresTextBox
             // 
@@ -186,17 +208,6 @@
             this.nombresTextBox.Size = new System.Drawing.Size(287, 20);
             this.nombresTextBox.TabIndex = 19;
             // 
-            // fechaLabel
-            // 
-            fechaLabel.AutoSize = true;
-            fechaLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fechaLabel.ForeColor = System.Drawing.SystemColors.Control;
-            fechaLabel.Location = new System.Drawing.Point(33, 56);
-            fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(54, 19);
-            fechaLabel.TabIndex = 15;
-            fechaLabel.Text = "Fecha:";
-            // 
             // fechaDateTimePicker
             // 
             this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -204,17 +215,6 @@
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(120, 20);
             this.fechaDateTimePicker.TabIndex = 17;
-            // 
-            // personaIdLabel
-            // 
-            personaIdLabel.AutoSize = true;
-            personaIdLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            personaIdLabel.ForeColor = System.Drawing.SystemColors.Control;
-            personaIdLabel.Location = new System.Drawing.Point(12, 24);
-            personaIdLabel.Name = "personaIdLabel";
-            personaIdLabel.Size = new System.Drawing.Size(86, 19);
-            personaIdLabel.TabIndex = 14;
-            personaIdLabel.Text = "Persona Id:";
             // 
             // personaIdNumericUpDown
             // 
@@ -247,6 +247,7 @@
             this.Controls.Add(this.fechaDateTimePicker);
             this.Controls.Add(personaIdLabel);
             this.Controls.Add(this.personaIdNumericUpDown);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "rPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
